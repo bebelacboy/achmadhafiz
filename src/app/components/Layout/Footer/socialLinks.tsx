@@ -5,6 +5,7 @@ import { SiGithub, SiInstagram, SiLinkedin, SiGmail } from "react-icons/si";
 import UnstyledLink from "../../Link/UnstyledLink";
 import Tooltip from "../../Tooltip";
 import * as React from 'react';
+import { useCopyToClipboard } from "@/app/hooks/useCopyToClipboard";
 
 type Social = {
   href: string;
@@ -36,11 +37,25 @@ const socials: Social[] = [
 
 export default function SocialLinks() {
   const [mailTooltipText, setMailTooltipText] = React.useState<string>("Click to copy my email")
+  const [, copy] = useCopyToClipboard()
+  const email = 'achmadhafiz99@gmail.com'
+
+  const handleGmailClick = () => {
+    copy(email).then(() => {
+      setMailTooltipText("Email copied!")
+      setTimeout(() => {
+        setMailTooltipText("Click to copy my email")
+      }, 2000)
+    }    
+    )
+  }
 
   return (
-    <div className="flex items-center space-x-10">
-      <Tooltip key={'email'} text={mailTooltipText}>
-        <SiGmail className="h-8 w-8"/>
+    <div className="flex items-center space-x-10 text-theme-pink">
+      <Tooltip key={'email'} title={email} text={mailTooltipText}>
+        <button onClick={handleGmailClick}>
+          <SiGmail className="h-8 w-8"/>
+        </button>
       </Tooltip>
 
       {socials.map((social) => (
@@ -53,3 +68,4 @@ export default function SocialLinks() {
     </div>
   )
 }
+

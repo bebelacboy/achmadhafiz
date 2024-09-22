@@ -3,9 +3,9 @@ export default function Footer() {
   return (
     <footer>
       <main className="flex flex-col space-y-5 items-center">
-        <p className="">reach me out for any inquiries !!!!!</p>
+        <p><b>reach me out</b> for any inquiries</p>
         <SocialLinks />
-        <p>Achmad Hafiz, 2222</p>
+        <p>No &copy; Achmad Hafiz 2333</p>
       </main>
     </footer>
   )
