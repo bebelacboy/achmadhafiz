@@ -5,7 +5,7 @@ import { SiGithub, SiInstagram, SiLinkedin, SiGmail } from "react-icons/si";
 import UnstyledLink from "../../Link/UnstyledLink";
 import Tooltip from "../../Tooltip";
 import * as React from 'react';
-import { useCopyToClipboard } from "@/app/hooks/useCopyToClipboard";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 
 type Social = {
   href: string;

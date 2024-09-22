@@ -1,5 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6"
-import GradientText from "./components/GradientText";
+import GradientText from "../components/GradientText";
 
 export default function Home() {
   return (

@@ -1,6 +1,10 @@
 import clsx from "clsx"
-import { TooltipProps } from "./propsType"
 
+type TooltipProps = {
+  title?: string;
+  text: string;
+  children: React.ReactNode;
+}
 
 export default function Tooltip({title, text, children }: Readonly<TooltipProps>) {
   return (

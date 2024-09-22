@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { UnstyledLinkProps } from "./propsType"
+import { LinkProps } from "next/link";
+
+type UnstyledLinkProps = {
+  href: string;
+  children: React.ReactNode;
+  openNewTab?: boolean;
+  className?: string;
+} & React.ComponentPropsWithoutRef<'a'> & LinkProps;
 
 export default function UnstyledLink({
   children,

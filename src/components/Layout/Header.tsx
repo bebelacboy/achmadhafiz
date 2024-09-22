@@ -1,4 +1,4 @@
-import UnstyledLink from "../../Link/UnstyledLink"
+import UnstyledLink from "../Link/UnstyledLink"
 import clsx from "clsx"
 import * as React from 'react';
 import { russoOne } from "@/app/fonts";
