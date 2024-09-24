@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { LinkProps } from "next/link";
+import Link, { LinkProps } from "next/link";
 
 type UnstyledLinkProps = {
   href: string;

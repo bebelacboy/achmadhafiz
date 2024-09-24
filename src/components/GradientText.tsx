@@ -2,7 +2,7 @@ import clsx from "clsx"
 
 type GradientTextProps = React.ComponentPropsWithoutRef<'span'>;
 
-export default function GradientText({ className, children }: GradientTextProps) {
+export default function GradientText({ className, children }: Readonly<GradientTextProps>) {
   return (
     <span className={
       clsx(className,

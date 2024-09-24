@@ -11,7 +11,7 @@ export default function Header() {
         <ul className="flex items-center justify-between mx-auto text-base md:space-x-8 md:text-base">
           {links.map(({ href, label }) => (
             <li key={`${href}${label}`}>
-              <UnstyledLink href={href} className={clsx(
+              <UnstyledLink openNewTab={true} href={href} className={clsx(
                 'rounded-sm py-2 transition-colors',
                 'group',
                  russoOne.className,
@@ -37,6 +37,6 @@ export default function Header() {
 
 const links = [
   { href: '/', label: 'HOME' },
-  { href: '/', label: 'PROJECTS' },
+  { href: '/projects', label: 'PROJECTS' },
   { href: '/', label: 'ABOUT' }
 ]

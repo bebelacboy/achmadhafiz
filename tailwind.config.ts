@@ -17,7 +17,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         'theme-pink': "#ea00d9",
-        'theme-cyan': "#0abdc6"
+        'theme-cyan': "#0abdc6",
+        'theme-darkblue': "#133e7c",
       },
     },
   },
