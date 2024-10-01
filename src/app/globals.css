@@ -14,21 +14,12 @@ body {
 }
 
 .layout {
-  @apply mx-auto my-12 w-10/12;
+  @apply mx-auto my-12 w-10/12 lg:w-9/12;
 }
 
-
-
-.slide-bottom-border {
-  padding: 20px;
-  background-color: white;
-  border: none; /* Initially no border */
-  width: 300px;
-  height: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+.tag-clip-path {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 95% 100%, 0% 100%);
 }
-
 
 
 @layer utilities {

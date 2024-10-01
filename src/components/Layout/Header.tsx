@@ -11,7 +11,7 @@ export default function Header() {
         <ul className="flex items-center justify-between mx-auto text-base md:space-x-8 md:text-base">
           {links.map(({ href, label }) => (
             <li key={`${href}${label}`}>
-              <UnstyledLink openNewTab={true} href={href} className={clsx(
+              <UnstyledLink openNewTab={false} href={href} className={clsx(
                 'rounded-sm py-2 transition-colors',
                 'group',
                  russoOne.className,
@@ -21,7 +21,7 @@ export default function Header() {
                   className={clsx(
                     'transition-colors inline-block px-2',
                     'bg-primary-300/0',
-                    'group-hover:text-theme-pink group-hover:bg-primary-300/75 dark:group-hover:bg-primary-300/0 group-hover:font-bold',
+                    'group-hover:text-theme-cyan group-hover:bg-primary-300/75 dark:group-hover:bg-primary-300/0 group-hover:font-bold',
                   )}
                 >
                   {label}

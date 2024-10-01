@@ -4,14 +4,14 @@ import GradientText from "../components/GradientText";
 export default function Home() {
   return (
     <main className="layout">
-      <section className="lg:mx-28">
+      <section>
         <article className="flex flex-col gap-y-4">
           
           <h1 className="text-5xl font-extrabold">Hi, I&apos;m <GradientText>Hafiz</GradientText></h1>
           <h2 className="text-xl font-semibold">Software Engineer</h2>
-          <p className="inline-flex items-center gap-x-2">
+          <p className="inline-flex text-pink items-center gap-x-2">
             <FaLocationDot className="h-5 w-5" />
-            <GradientText className="text-xl">Jakarta</GradientText> 
+            <span className="text-xl text-theme-pink font-semibold">Jakarta</span>
           </p>
           <p className="text-xl">
             Lets not talk about software engineering, just straight take a look at my project showcase.

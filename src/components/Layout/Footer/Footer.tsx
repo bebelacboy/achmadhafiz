@@ -5,7 +5,7 @@ export default function Footer() {
       <main className="flex flex-col space-y-5 items-center p-5">
         <p><b>reach me out</b> for any inquiries</p>
         <SocialLinks />
-        <p>No &copy; Achmad Hafiz 2333</p>
+        <p>&#9822; Achmad Hafiz 2333</p>
       </main>
     </footer>
   )

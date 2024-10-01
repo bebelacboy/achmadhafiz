@@ -10,25 +10,22 @@ type UnstyledLinkProps = {
 export default function UnstyledLink({
   children,
   href,
-  openNewTab,
+  openNewTab = true,
   className,
   ...rest
 }: UnstyledLinkProps) {
-  const isNewTab: boolean | undefined = openNewTab && !!href && !href.startsWith('/') && !href.startsWith('#');
 
-  if (isNewTab) {
+  if (openNewTab) {
     return (
-      <Link href={href}>
-        <a {...rest} className={className}>
-          {children}
-        </a>
+      <Link target="_blank" href={href} {...rest} className={className}>
+        {children}
       </Link>
     )
   }
 
   return (
-    <a target="_blank" rel="noopener noreferrer" href={href} {...rest} className={className}>
+    <Link href={href} {...rest} className={className}>
       {children}
-    </a>
+    </Link>
   )
 }

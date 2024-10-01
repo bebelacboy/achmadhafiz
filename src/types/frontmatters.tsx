@@ -1,5 +1,10 @@
 export type PostType = 'projects';
 
+export type PostTypeAndSlug = {
+  type: PostType,
+  slug: string
+}
+
 export type ProjectFrontmatter = {
   slug?: string;
   title: string;
@@ -7,7 +12,7 @@ export type ProjectFrontmatter = {
   lastUpdated?: string;
   description: string;
   category?: string;
-  techstack: string;
+  techStack: string;
   thumbnail: string;
   link?: string;
   github?: string;
