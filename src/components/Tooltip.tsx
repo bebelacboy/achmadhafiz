@@ -1,26 +1,36 @@
-import clsx from "clsx"
+'use client';
+
+import clsx from "clsx";
+import * as React from "react";
 
 type TooltipProps = {
   title?: string;
   text: string;
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 export default function Tooltip({title, text, children, className }: Readonly<TooltipProps>) {
+  const[showTooltip, setShowTooltip] = React.useState<boolean>(false);
+
+  const handleMouseEnter = () => setShowTooltip(true);
+  const handleMouseLeave = () => setShowTooltip(false);
+  
   return (
-    <div className="relative group/tooltip">
-      
+    <div role='presentation' 
+      className='relative' 
+      onMouseEnter={handleMouseEnter} 
+      onMouseLeave={handleMouseLeave}>    
       {children}
-      <div className={clsx('absolute left-1/2 transform -translate-x-1/2 min-w-24  bottom-full',
+      {showTooltip && <div className={clsx('absolute left-1/2 transform -translate-x-1/2 min-w-24  bottom-full',
          'mb-2 px-2 py-1 text-xs text-white text-center',
          'bg-gradient-to-tr from-theme-cyan/90 via-theme-cyan/95 to-theme-cyan/100', 
-         'rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity',
+         'rounded transition-opacity',
+        //  showTooltip ? 'opacity-100' : 'opacity-0',
          className)}>
-        {title && <p className="font-semibold">{title}</p>}
+        {title && <p className="font-semibold text-base">{title}</p>}
         {text}
-      </div>
-
+      </div>}
     </div>
   )
 }

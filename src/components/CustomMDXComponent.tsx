@@ -16,8 +16,8 @@ import {
   SiExpress,
 } from 'react-icons/si';
 import { IconBaseProps } from 'react-icons';
-import clsx from 'clsx';
-import LightboxCarousel, { LightboxCarouselProps } from './LightboxCarousel';
+import ImageCarousel, { ImageCarouselProps } from './Image/ImageCarousel';
+import Subtitle from './Subtitle';
 
 const components = {
   div: (props: React.ComponentPropsWithoutRef<'div'>) => (
@@ -26,15 +26,12 @@ const components = {
     </div>
   ),
   h2: (props: React.ComponentPropsWithoutRef<'h2'>) => (
-    <h2 {...props} className={clsx(
-      'text-2xl font-semibold uppercase tracking-wide', 
-      'mb-6 px-4 py-2 w-fit',
-      'bg-theme-pink hover:bg-theme-pink/80 border-s-theme-cyan border-s-8 tag-clip-path')}>
+    <Subtitle {...props}>
       {props.children}
-    </h2>
+    </Subtitle>
   ),
   p: (props: React.ComponentPropsWithoutRef<'p'>) => (
-    <p {...props} className='text-xl text-justify mb-6'>
+    <p {...props} className='text-justify mb-6'>
       {props.children}
     </p>
   ),
@@ -44,12 +41,12 @@ const components = {
     </ul>
   ),
   li: (props: React.ComponentPropsWithoutRef<'li'>) => (
-    <li {...props} className='flex gap-x-2 mb-6 items-center text-xl'>
+    <li {...props} className='flex gap-x-2 mb-6 items-center text-base md:text-lg'>
       {props.children}
     </li>
   ),
   span: (props: React.ComponentPropsWithoutRef<'span'>) => (
-    <span {...props}>
+    <span className='text-base md:text-lg' {...props}>
       {props.children}
     </span>
   ),
@@ -118,8 +115,8 @@ const components = {
       <SiRedux className='h-8 w-8' {...props}/>
     </div>
   ),
-  LightboxCarousel: (props: LightboxCarouselProps) => (
-    <LightboxCarousel {...props}/>
+  ImageCarousel: (props: ImageCarouselProps) => (
+    <ImageCarousel {...props}/>
   )
 }
 

@@ -1,27 +1,28 @@
 'use client';
 
 import * as React from 'react';
-import Image from 'next/image';
 import { CarouselImageProps } from '@/types/images';
 import clsx from 'clsx';
+import ImageLightbox from './ImageLightbox';
 
-export type LightboxCarouselProps = {
+export type ImageCarouselProps = {
   images: CarouselImageProps[],
   height?: number
 } & React.ComponentPropsWithoutRef<'div'>
 
-export type LightboxCarouselSize = {
+export type ImageCarouselSize = {
   width: number,
   height: number
 }
-export default function LightboxCarousel({ images, height }: LightboxCarouselProps ) {
+
+export default function ImageCarousel({ images, height }: ImageCarouselProps ) {
   const [imageToShow, setImageToShow] = React.useState<number>(0);
   const DEFAULT_HEIGHT: number = 700;
   
-  const resizedDimensions: LightboxCarouselSize[] = images.map((image) => {
+  const resizedDimensions: ImageCarouselSize[] = images.map((image) => {
     const fixHeight = height ?? DEFAULT_HEIGHT;
     const aspectRatio: number = (image.width as number) / (image.height as number);
-      const resizedDimension: LightboxCarouselSize = {
+      const resizedDimension: ImageCarouselSize = {
         width: aspectRatio * fixHeight,
         height: fixHeight
       };
@@ -46,9 +47,7 @@ export default function LightboxCarousel({ images, height }: LightboxCarouselPro
           'overflow-hidden mx-auto flex ',
           )}
           >
-          
-            
-            <Image
+            <ImageLightbox
               width={resizedDimensions[imageToShow].width}
               height={resizedDimensions[imageToShow].height}
               className='mx-auto box-content self-center'

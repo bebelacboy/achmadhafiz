@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 
-type UnstyledLinkProps = {
+export type UnstyledLinkProps = {
   href: string;
   children: React.ReactNode;
   openNewTab?: boolean;

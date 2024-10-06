@@ -2,7 +2,7 @@ import { ProjectFrontmatter } from "@/types/frontmatters"
 import clsx from "clsx";
 import Image from "next/image";
 import UnstyledLink from "../../Link/UnstyledLink";
-import TechStackIcons from "./TechStackIcons";
+import TechStackIcons from "../../TechStackIcons";
 
 type ProjectCardProps = {
   frontmatter: ProjectFrontmatter;
@@ -12,10 +12,11 @@ export default function ProjectCard({ frontmatter, className }: ProjectCardProps
   return (
     <li className={clsx(
       'group transition-colors',
-      'hover:scale-105 hover:z-10 transition-transform',
+      'hover:scale-105 z-10 hover:z-20 transition-transform',
       'bg-gradient-to-tr from-theme-darkblue via-theme-darkblue/60 to-theme-darkblue/40',
       'hover:bg-gradient-to-tr hover:from-theme-pink hover:via-theme-pink/80 hover:to-theme-pink/60',
       'border-collapse border-b-theme-cyan hover:border-b-transparent border-b-4 ',
+      'list-none',
       className
     )}>
       <UnstyledLink openNewTab={false} href={`/projects/${frontmatter.slug}`}>

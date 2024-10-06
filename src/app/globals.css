@@ -13,12 +13,31 @@ body {
   background: var(--background);
 }
 
+
+p {
+  @apply text-base md:text-lg;
+}
+
 .layout {
   @apply mx-auto my-12 w-10/12 lg:w-9/12;
 }
 
 .tag-clip-path {
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 95% 100%, 0% 100%);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 

@@ -13,9 +13,9 @@ export function getAllMDXFrontmatter<T extends PostType>(type: T) {
   const fileNames: string[] = fs.readdirSync(projectsDirectory);
   const mdxFileNames: string[] = fileNames.filter((fileName) => fileName.endsWith('.mdx'));
   const frontmatters: ProjectFrontmatter[] = mdxFileNames.map((fileName) => {
-    const filePath: string = join(projectsDirectory, fileName)
-    const fileContent = fs.readFileSync(filePath, 'utf-8')
-    const { data } = matter(fileContent)
+    const filePath: string = join(projectsDirectory, fileName);
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data } = matter(fileContent);
     const slug: string = fileName.replace('.mdx', '').replaceAll('_', '-')
     data['slug'] = slug;
     return data as ProjectFrontmatter;
@@ -55,4 +55,19 @@ export function getContentBySlug({ type, slug }: PostTypeAndSlug) {
   const fileContent: string = fs.readFileSync(fileDirectory, 'utf-8');
   const { content, data } = matter(fileContent);
   return { content, metadata: data };
+}
+
+export function getFrontmatterBySlug({ type, slug }: PostTypeAndSlug): ProjectFrontmatter | null {
+  const contentPath: string = join(contentsDirectory, type, `${slug}.mdx`);
+  console.log(contentPath);
+  try {
+    const fileContent = fs.readFileSync(contentPath, 'utf-8');
+    const { data } = matter(fileContent);
+    data['slug'] = slug;
+    console.log(data);
+    return data as ProjectFrontmatter;
+  } catch (err) {
+    return null;
+  }
+
 }
