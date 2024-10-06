@@ -3,6 +3,10 @@ import { ProjectFrontmatter } from "@/types/frontmatters";
 import GradientText from "@/components/GradientText";
 import ProjectCard from "@/components/Card/ProjectCard/ProjectCard";
 import BackgroundElement from "@/components/BackgroundElement/BackgroundElement";
+import { Metadata } from "next";
+import { projectsMetadata } from "@/constants/metadata";
+
+export const metadata: Metadata = projectsMetadata;
 
 export default function Project()  {
   const frontmatters: ProjectFrontmatter[] = getAllMDXFrontmatter('projects');

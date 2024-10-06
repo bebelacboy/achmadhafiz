@@ -1,4 +1,4 @@
-import { getAllMDXImageSrcAlts, getAllMDXSlug, getContentBySlug } from "@/lib/mdx-util"
+import { getAllMDXImageSrcAlts, getAllMDXSlug, getContentBySlug, getFrontmatterBySlug } from "@/lib/mdx-util"
 import { CustomMDX } from "@/components/CustomMDXComponent";
 import GradientText from "@/components/GradientText";
 import Image from "next/image";
@@ -6,6 +6,9 @@ import { CarouselImageProps } from "@/types/images";
 import { getViews, registerViews } from "@/lib/supabase-repository";
 import { IoEye } from "react-icons/io5";
 import BackgroundElement from "@/components/BackgroundElement/BackgroundElement";
+import { Metadata } from "next";
+import { ProjectFrontmatter } from "@/types/frontmatters";
+import { DOMAIN } from "@/constants/constant";
 
 export const revalidate = 60;
 
@@ -15,6 +18,38 @@ export function generateStaticParams() {
   return slugs.map((slug) => ({
     slug: slug,
   }))
+}
+
+export async function generateMetadata(
+  { params }: Readonly<ProjectDetailProps>,
+): Promise<Metadata> {
+  const slug = params.slug;
+  const frontmatter: ProjectFrontmatter = getFrontmatterBySlug({ type: 'projects', slug }) as ProjectFrontmatter;
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    openGraph: {
+      title: frontmatter.title,
+      url: `${DOMAIN}/projects/${frontmatter.slug}`,
+      siteName: "Achmad Hafiz",
+      images: {
+          url: `${DOMAIN}${frontmatter.thumbnail}`, // Must be an absolute URL
+          
+        },
+      type: 'article',
+      description: frontmatter.description,
+      publishedTime: frontmatter.publishedAt,
+      authors: 'Achmad Hafiz',
+    },
+    
+    twitter: {
+      card: 'summary_large_image',
+      title: frontmatter.title,
+      description: frontmatter.description,
+      creator: '@superbebelac',
+      images: `${DOMAIN}${frontmatter.thumbnail}`,
+    }
+  }
 }
 
 type ProjectDetailProps = {

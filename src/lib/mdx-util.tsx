@@ -57,17 +57,15 @@ export function getContentBySlug({ type, slug }: PostTypeAndSlug) {
   return { content, metadata: data };
 }
 
-export function getFrontmatterBySlug({ type, slug }: PostTypeAndSlug): ProjectFrontmatter | null {
-  const contentPath: string = join(contentsDirectory, type, `${slug}.mdx`);
-  console.log(contentPath);
+export function getFrontmatterBySlug({ type, slug }: PostTypeAndSlug): ProjectFrontmatter | undefined {
+  const contentPath: string = join(contentsDirectory, type, `${slug.replaceAll('-', '_')}.mdx`);
   try {
+    console.log(contentPath);
     const fileContent = fs.readFileSync(contentPath, 'utf-8');
     const { data } = matter(fileContent);
     data['slug'] = slug;
-    console.log(data);
     return data as ProjectFrontmatter;
   } catch (err) {
-    return null;
+    return undefined;
   }
-
 }

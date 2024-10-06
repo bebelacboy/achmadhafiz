@@ -4,6 +4,10 @@ import Subtitle from "@/components/Subtitle";
 import TechStackIcons from "@/components/TechStackIcons";
 import UnstyledLink from "@/components/Link/UnstyledLink";
 import BackgroundElement2 from "@/components/BackgroundElement/BackgroundElement2";
+import { aboutMetadata } from "@/constants/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = aboutMetadata;
 
 export default function About() {
   const techStacks = ["react", "nextjs", "express", "tailwindcss", "spring", "django", "flutter"];
