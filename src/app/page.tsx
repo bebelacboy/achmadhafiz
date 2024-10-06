@@ -1,7 +1,7 @@
 import { FaLocationDot } from "react-icons/fa6"
 import GradientText from "../components/GradientText";
 import ButtonLink from "@/components/Link/ButtonLink";
-import BackgroundElement from "@/components/BackgroundElement";
+import BackgroundElement from "@/components/BackgroundElement/BackgroundElement";
 import ProjectCard from "@/components/Card/ProjectCard/ProjectCard";
 import { ProjectFrontmatter } from "@/types/frontmatters";
 import { getFrontmatterBySlug } from "@/lib/mdx-util";

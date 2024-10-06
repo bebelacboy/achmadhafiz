@@ -31,6 +31,12 @@ p {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

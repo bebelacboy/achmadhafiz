@@ -2,7 +2,7 @@ import { getAllMDXFrontmatter } from "@/lib/mdx-util"
 import { ProjectFrontmatter } from "@/types/frontmatters";
 import GradientText from "@/components/GradientText";
 import ProjectCard from "@/components/Card/ProjectCard/ProjectCard";
-import BackgroundElement from "@/components/BackgroundElement";
+import BackgroundElement from "@/components/BackgroundElement/BackgroundElement";
 
 export default function Project()  {
   const frontmatters: ProjectFrontmatter[] = getAllMDXFrontmatter('projects');
@@ -16,7 +16,7 @@ export default function Project()  {
             </GradientText>
             Showcase
           </h1>
-          <h2 className="text-xl">
+          <h2 className="lg:text-xl">
             well i&apos;m not that good
           </h2>
           <ul className="mt-6 grid gap-7 sm:grid-cols-2 xl:grid-cols-3">

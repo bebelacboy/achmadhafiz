@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CarouselImageProps } from "@/types/images";
 import { getViews, registerViews } from "@/lib/supabase-repository";
 import { IoEye } from "react-icons/io5";
+import BackgroundElement from "@/components/BackgroundElement/BackgroundElement";
 
 export const revalidate = 60;
 
@@ -43,6 +44,7 @@ export default async function ProjectDetail({ params }: Readonly<ProjectDetailPr
         <article>
           <CustomMDX source={content} options={{scope: data}} />
         </article>
+        <BackgroundElement />
       </section>
     </main>
   )

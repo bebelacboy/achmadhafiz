@@ -3,6 +3,7 @@ import ImageLightbox from "@/components/Image/ImageLightbox";
 import Subtitle from "@/components/Subtitle";
 import TechStackIcons from "@/components/TechStackIcons";
 import UnstyledLink from "@/components/Link/UnstyledLink";
+import BackgroundElement2 from "@/components/BackgroundElement/BackgroundElement2";
 
 export default function About() {
   const techStacks = ["react", "nextjs", "express", "tailwindcss", "spring", "django", "flutter"];
@@ -10,7 +11,7 @@ export default function About() {
   return (
     <main className="layout">
       <section className="fade-in">
-        <h1 className="text-5xl font-extrabold mb-6">Achmad <GradientText>Hafiz</GradientText></h1>
+        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">Achmad <GradientText>Hafiz</GradientText></h1>
         <ImageLightbox className="ms-5 mb-2 float-right w-1/2 md:w-2/5 lg:w-1/5" imageClassName="rounded-2xl mx-auto"
               width={700} height={100} src="/images/about/me.jpg" alt="far from 'formal'" />
         <article>
@@ -70,6 +71,7 @@ export default function About() {
           <Subtitle>Reach Me Out</Subtitle>
           <p className="mb-6">Scroll down to <a className="underline hover:text-theme-cyan" href="#footer">footer</a> for my contacts!
           I&apos;ll be very happy for any discussion related to software engineering or maybe a collaboration!</p>
+        <BackgroundElement2 />
         </article>
       </section>
     </main>
