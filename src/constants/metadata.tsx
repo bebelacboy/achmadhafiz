@@ -2,7 +2,7 @@ import { DOMAIN } from "./constant";
 import { Metadata } from "next";
 
 export const rootMetadata: Metadata = {
-  metadataBase: new URL(DOMAIN ?? 'localhost:3000'),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: {
     template: "%s | Achmad Hafiz",
     default: "Achmad Hafiz's Portfolio",
