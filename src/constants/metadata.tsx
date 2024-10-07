@@ -13,7 +13,7 @@ export const rootMetadata: Metadata = {
       template: "%s | Achmad Hafiz",
       default: "Achmad Hafiz's Portfolio",
     },
-    url: DOMAIN,
+    url: "",
     siteName: "Achmad Hafiz",
     images: {
         url: `https://${DOMAIN}/favicon/android-chrome-512x512.png`, // Must be an absolute URL
