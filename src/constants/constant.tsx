@@ -1,1 +1,1 @@
-export const DOMAIN: string | undefined = process.env.DOMAIN;
+export const DOMAIN: string | undefined = process.env.NEXT_PUBLIC_BASE_URL;
