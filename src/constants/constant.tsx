@@ -1,1 +1,1 @@
-export const DOMAIN: string | undefined = process.env.NEXT_PUBLIC_BASE_URL;
+export const DOMAIN: string | undefined = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;

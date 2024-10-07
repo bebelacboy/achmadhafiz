@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const frontmatters: ProjectFrontmatter[] = getAllMDXFrontmatter("projects");
   const slugSitemaps: MetadataRoute.Sitemap = frontmatters.map((frontmatter) => {
     return {
-      url: `${DOMAIN}/projects/${frontmatter.slug}`,
+      url: `https://${DOMAIN}/projects/${frontmatter.slug}`,
       lastModified: frontmatter.publishedAt,
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -15,25 +15,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   return [
     {
-      url: DOMAIN as string,
+      url: `https://${DOMAIN}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1
     },
     {
-      url: `${DOMAIN}/about`,
+      url: `https://${DOMAIN}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8
     },
     {
-      url: `${DOMAIN}/projects`,
+      url: `https://${DOMAIN}/projects`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5
-    },
-    {
-      url: `${DOMAIN}/pr`
     },
     ...slugSitemaps
   ]
