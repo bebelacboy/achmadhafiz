@@ -37,20 +37,22 @@ export function getAllMDXSlug<T extends PostType>(type: T): string[] {
   return slugs;
 }
 
-export function getAllMDXImageSrcAlts({ type, slug }: PostTypeAndSlug): CarouselImageProps[] | undefined{
+export function getAllMDXImageSrcAlts({ type, slug }: PostTypeAndSlug): CarouselImageProps[] {
   const specificImagesDirectory: string = join("/images", type, slug);
+  let imageFileNames: string[] = []
   try {
-    const imageFileNames: string[] = fs.readdirSync(join(imagesDirectory, specificImagesDirectory));
-    const imageSrcAlts: CarouselImageProps[] = imageFileNames.map((fileName) => {
-      const { width, height } = imageSize(join(imagesDirectory, specificImagesDirectory, fileName));
-      const src = join(specificImagesDirectory, fileName).replaceAll("\\", "/");
-      const alt = fileName.replace('.mdx', '')
-      return { src, alt, width, height }
-    });
-    return imageSrcAlts;
-  } catch (e) {
-    return undefined;
+    imageFileNames = fs.readdirSync(join(imagesDirectory, specificImagesDirectory));
+  } catch {
+    return [];
   }
+
+  const imageSrcAlts: CarouselImageProps[] = imageFileNames.map((fileName) => {
+    const { width, height } = imageSize(join(imagesDirectory, specificImagesDirectory, fileName));
+    const src = join(specificImagesDirectory, fileName).replaceAll("\\", "/");
+    const alt = fileName.replace('.mdx', '');
+    return { src, alt, width, height }
+  });
+    return imageSrcAlts;
 }
 
 export function getContentBySlug({ type, slug }: PostTypeAndSlug) {
