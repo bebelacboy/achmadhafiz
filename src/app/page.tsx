@@ -10,11 +10,10 @@ import UnstyledLink from "@/components/Link/UnstyledLink";
 export default function Home() {
   const featuredProjectFrontmatter: ProjectFrontmatter = getFrontmatterBySlug({type: 'projects', slug: 'pokedex'}) as ProjectFrontmatter;
   return (
-    <>
       
       <main className="layout">
         <section className="mb-6 fade-in">
-          <article className="flex flex-col gap-y-3 mb-7">
+          <article className="flex flex-col gap-y-3">
             
             <h1 className="text-4xl md:text-5xl font-extrabold">Hi, i&apos;m <GradientText>Hafiz</GradientText></h1>
             <h2 className="text-xl font-semibold">Software Engineer</h2>
@@ -53,6 +52,5 @@ export default function Home() {
           </article>
         </section>
       </main>
-    </>
   );
 }

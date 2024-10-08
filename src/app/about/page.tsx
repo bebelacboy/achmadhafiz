@@ -19,7 +19,7 @@ export default function About() {
         <ImageLightbox className="ms-5 mb-2 float-right w-1/2 md:w-2/5 lg:w-1/5" imageClassName="rounded-2xl mx-auto"
               width={700} height={100} src="/images/about/me.jpg" alt="far from 'formal'" />
         <article>
-          <p className="mb-6 text-justify">
+          <p className="mb-6">
             Born in Medan, raised in Balikpapan, and currrently live in Bekasi, 
             I have experienced a diverse range of cultures and environments. Well, I just
             gave you some private information but I don&apos;t care bro. 
@@ -38,7 +38,7 @@ export default function About() {
 
           <TechStackIcons className="mb-6 w-4/5 md:w-2/5" colorful={true} techs={techStacks}/>
           <Subtitle>Experience</Subtitle>
-          <p className="mb-6 text-justify"> 
+          <p className="mb-6"> 
             Most of my works are mainly more in developing backend services instead the frontend application.
             However, I did some user interface throughout my works and learning process and this profile web
             also a part of it.
@@ -46,14 +46,19 @@ export default function About() {
           </p>
           <ul className="list-disc ms-5 mb-6">
             <li>
-              <p> <span className="font-semibold">UI BRI Work Startup Center - Backend Engineer</span> &#40;August 2024 - October 2024&#41;</p>
+              <p className="font-semibold"> UI BRI Work Startup Center</p>
+              <p className="italic text-gray-400 text-sm">&#40;August 2024 - October 2024&#41;</p>
+              <p className="italic text-gray-400">Backend Engineer</p>
             </li>
             <li>
-              <p>  <span className="font-semibold">M-Knows Consulting Internship - Backend Engineer</span> &#40;August 2023 - December 2023&#41;</p>
+              <p className="font-semibold">M-Knows Consulting Internship</p> 
+              <p className="italic text-gray-400 text-sm">&#40;August 2023 - December 2023&#41;</p>
+              <p className="italic text-gray-400">Backend Engineer</p> 
             </li>
             <li>
-              <p> <span className="font-semibold"> PT Petaling Jaya Indonesia Trucking Management System Project - Fullstack Engineer </span>&#40;March 2023 - June 2023&#41;
-              </p>
+              <p className="font-semibold"> PT Petaling Jaya Indonesia Trucking Management System Project </p>
+              <p className="italic text-gray-400 text-sm">&#40;March 2023 - June 2023&#41;</p>
+              <p className="italic text-gray-400">Fullstack Engineer</p>
             </li>
           </ul>
           <p className="mb-6">

@@ -16,7 +16,7 @@ export const rootMetadata: Metadata = {
     url: `https://${DOMAIN}`,
     siteName: "Achmad Hafiz",
     images: {
-        url: `https://${DOMAIN}/favicon/android-chrome-512x512.png`, // Must be an absolute URL
+        url: `https://${DOMAIN}/images/achmadhafiz-card.png`, // Must be an absolute URL
         width: 800,
         height: 600,
       },
@@ -32,7 +32,7 @@ export const rootMetadata: Metadata = {
     },
     description: "Achmad Hafiz portfolio website as a Software Engineer. He's passionate in exploring web technologies whether it is front end development or back end development.",
     creator: '@superbebelac',
-    images: `https://${DOMAIN}/favicon/android-chrome-512x512.png`, // Must be an absolute URL
+    images: `https://${DOMAIN}/images/achmadhafiz-card.png`, // Must be an absolute URL
   },
   robots: {
     index: true,
@@ -66,7 +66,7 @@ export const projectsMetadata: Metadata = {
     title: "Projects",
     description: "Showcase of Achmad Hafiz's Project throughout his software engineering journey.",
     creator: '@superbebelac',
-    images: `https://${DOMAIN}/favicon/android-chrome-512x512.png`,
+    images: `https://${DOMAIN}/images/achmadhafiz-card.png`,
   }
 };
 
@@ -91,7 +91,7 @@ export const aboutMetadata: Metadata = {
     title: "About",
     description: "Background of Achmad Hafiz as a Software Engineer and some of his personal information",
     creator: '@superbebelac',
-    images: `https://${DOMAIN}/favicon/android-chrome-512x512.png`,
+    images: `https://${DOMAIN}/images/achmadhafiz-card.png`,
   }
 };
 export const projectDetailMetadata: Metadata = {
@@ -115,6 +115,6 @@ export const projectDetailMetadata: Metadata = {
     title: "About",
     description: "Background of Achmad Hafiz as a Software Engineer and some of his personal information",
     creator: '@superbebelac',
-    images: `https://${DOMAIN}/favicon/android-chrome-512x512.png`,
+    images: `https://${DOMAIN}/images/achmadhafiz-card.png`,
   }
 };

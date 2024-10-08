@@ -31,7 +31,7 @@ const components = {
     </Subtitle>
   ),
   p: (props: React.ComponentPropsWithoutRef<'p'>) => (
-    <p {...props} className='text-justify mb-6'>
+    <p {...props} className='mb-6'>
       {props.children}
     </p>
   ),
